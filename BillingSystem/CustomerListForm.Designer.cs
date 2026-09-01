@@ -53,7 +53,6 @@
             lblTitle.Size = new Size(133, 25);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Customer List";
-            
             // 
             // dgvCustomers
             // 
@@ -66,7 +65,6 @@
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCustomers.Size = new Size(715, 247);
             dgvCustomers.TabIndex = 1;
-            
             // 
             // CustomerID
             // 
@@ -161,7 +159,7 @@
             Controls.Add(lblTitle);
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System - Customer List";
+            Text = "Billing System v1.0 - Customer List (A.B.)";
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
