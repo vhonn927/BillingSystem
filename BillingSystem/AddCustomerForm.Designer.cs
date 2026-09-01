@@ -62,7 +62,6 @@
             lblFullName.Size = new Size(67, 15);
             lblFullName.TabIndex = 1;
             lblFullName.Text = "Full Name: ";
-            
             // 
             // lblAddress
             // 
@@ -91,7 +90,6 @@
             lblEmail.Size = new Size(39, 15);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "Email:";
-            
             // 
             // lblBalance
             // 
@@ -165,7 +163,6 @@
             btnSave.TabIndex = 13;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
-            
             // 
             // AddCustomerForm
             // 
@@ -190,7 +187,7 @@
             MaximizeBox = false;
             Name = "AddCustomerForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System - Add Customer";
+            Text = "Billing System v1.0 - Add Customer (V.I.)";
             ResumeLayout(false);
             PerformLayout();
         }
