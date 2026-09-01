@@ -42,78 +42,82 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(92, 61);
+            lblTitle.Location = new Point(105, 81);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(174, 24);
+            lblTitle.Size = new Size(223, 29);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "BILLING SYSTEM";
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(89, 110);
+            lblUsername.Location = new Point(102, 147);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(63, 15);
+            lblUsername.Size = new Size(78, 20);
             lblUsername.TabIndex = 2;
             lblUsername.Text = "Username:";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(158, 107);
+            txtUsername.Location = new Point(181, 143);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(108, 23);
+            txtUsername.Size = new Size(123, 27);
             txtUsername.TabIndex = 3;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(89, 142);
+            lblPassword.Location = new Point(102, 189);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(60, 15);
+            lblPassword.Size = new Size(73, 20);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Password:";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(158, 139);
+            txtPassword.Location = new Point(181, 185);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(108, 23);
+            txtPassword.Size = new Size(123, 27);
             txtPassword.TabIndex = 5;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(101, 168);
+            btnLogin.Location = new Point(115, 224);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 23);
+            btnLogin.Size = new Size(86, 31);
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
-            
             // 
             // button1
             // 
-            button1.Location = new Point(306, 223);
+            button1.Location = new Point(350, 297);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(8, 8);
+            button1.Size = new Size(9, 11);
             button1.TabIndex = 7;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(182, 168);
+            btnCancel.Location = new Point(208, 224);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 23);
+            btnCancel.Size = new Size(86, 31);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(384, 261);
+            ClientSize = new Size(439, 348);
             Controls.Add(btnCancel);
             Controls.Add(button1);
             Controls.Add(btnLogin);
@@ -123,11 +127,11 @@
             Controls.Add(lblUsername);
             Controls.Add(lblTitle);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System - Login";
-            
+            Text = "Billing System v1.0 - Login (D.G)";
             ResumeLayout(false);
             PerformLayout();
         }
