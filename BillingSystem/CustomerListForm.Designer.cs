@@ -159,7 +159,7 @@
             Controls.Add(lblTitle);
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System v1.0 - Customer List (A.B.)";
+            Text = "Billing System v1.0 - Customer List (B.A.)";
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
