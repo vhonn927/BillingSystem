@@ -187,7 +187,7 @@
             MaximizeBox = false;
             Name = "AddCustomerForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System v1.0 - Add Customer (V.A.)";
+            Text = "Billing System v1.0 - Add Customer (V.I.)";
             ResumeLayout(false);
             PerformLayout();
         }
