@@ -3,7 +3,9 @@ namespace BillingSystem
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// The main entry point for the application.
+        /// Starts the application and launches the login window.
+        ///  The main entry point for the application. This will initialize the application and everything else.
         /// </summary>
         [STAThread]
         static void Main()

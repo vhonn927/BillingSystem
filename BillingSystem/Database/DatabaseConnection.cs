@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MySql.Data.MySqlClient;
 
 namespace BillingSystem.Database
@@ -12,7 +12,6 @@ namespace BillingSystem.Database
         // Connection string settings — update Password if needed
         private const string SERVER = "localhost";
         private const string DATABASE = "BillingDB";
-
         private const string UID = "root";
         private const string PASSWORD = "first_SQL_vhonn_CS2A";  // Add your MySQL password here
 
@@ -37,7 +36,6 @@ namespace BillingSystem.Database
                     conn.Open();
                     return true;
                 }
-
             }
             catch (Exception)
             {

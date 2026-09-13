@@ -1,6 +1,8 @@
 using BillingSystem.Database;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
+using System;
+using System.Windows.Forms;
+
 namespace BillingSystem
 {
     public partial class LoginForm : Form
@@ -32,7 +34,7 @@ namespace BillingSystem
                 {
                     conn.Open();
                     string sql = @"SELECT UserID, FullName, Role FROM Users 
-                           WHERE Username = @Username AND Password = @Password;";
+                                   WHERE Username = @Username AND Password = @Password;";
 
                     using (var cmd = new MySqlCommand(sql, conn))
                     {
@@ -82,9 +84,6 @@ namespace BillingSystem
             }
 
             txtUsername.Focus();
-
-
         }
     }
 }
-
