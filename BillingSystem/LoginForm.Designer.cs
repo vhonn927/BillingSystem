@@ -92,6 +92,7 @@
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // button1
             // 
@@ -132,6 +133,7 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System v1.0 - Login (D.G)";
+            Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
