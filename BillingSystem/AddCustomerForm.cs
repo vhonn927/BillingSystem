@@ -106,7 +106,7 @@ namespace BillingSystem
             // Check Balance is a valid number 
             if (!decimal.TryParse(txtBalance.Text, out _))
             {
-                MessageBox.Show("Initial Balance must be a valid number (e.g.0.00).","Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Initial Balance must be a valid number (e.g. 0.00).", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBalance.Focus();
                 return false;
             }
