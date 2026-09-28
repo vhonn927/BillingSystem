@@ -110,6 +110,7 @@
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Add Customer";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
@@ -144,6 +145,8 @@
             btnSearch.TabIndex = 6;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            btnSearch.KeyPress += txtSearch_KeyPress;
             // 
             // CustomerListForm
             // 
@@ -159,7 +162,12 @@
             Controls.Add(lblTitle);
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
+<<<<<<< Updated upstream
             Text = "Billing System v1.0 - Customer List (B.A.)";
+=======
+            Text = "Billing System - Customer List";
+            Load += CustomerListForm_Load;
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
