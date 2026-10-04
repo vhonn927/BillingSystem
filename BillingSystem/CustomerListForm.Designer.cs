@@ -65,6 +65,8 @@
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCustomers.Size = new Size(715, 247);
             dgvCustomers.TabIndex = 1;
+            dgvCustomers.CellDoubleClick += dgvCustomers_CellContentClick;
+            dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
             // 
             // CustomerID
             // 
@@ -120,6 +122,7 @@
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnLogout
             // 
@@ -162,12 +165,8 @@
             Controls.Add(lblTitle);
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
-<<<<<<< Updated upstream
             Text = "Billing System v1.0 - Customer List (B.A.)";
-=======
-            Text = "Billing System - Customer List";
             Load += CustomerListForm_Load;
->>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
