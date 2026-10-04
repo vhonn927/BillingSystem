@@ -48,127 +48,136 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(139, 20);
+            lblTitle.Location = new Point(159, 27);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(157, 21);
+            lblTitle.Size = new Size(195, 28);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add New Customer";
             // 
             // lblFullName
             // 
             lblFullName.AutoSize = true;
-            lblFullName.Location = new Point(88, 70);
+            lblFullName.Location = new Point(101, 93);
             lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(67, 15);
+            lblFullName.Size = new Size(83, 20);
             lblFullName.TabIndex = 1;
             lblFullName.Text = "Full Name: ";
             // 
             // lblAddress
             // 
             lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(88, 99);
+            lblAddress.Location = new Point(101, 132);
             lblAddress.Name = "lblAddress";
             lblAddress.RightToLeft = RightToLeft.No;
-            lblAddress.Size = new Size(52, 15);
+            lblAddress.Size = new Size(65, 20);
             lblAddress.TabIndex = 2;
             lblAddress.Text = "Address:";
             // 
             // lblContact
             // 
             lblContact.AutoSize = true;
-            lblContact.Location = new Point(88, 128);
+            lblContact.Location = new Point(101, 171);
             lblContact.Name = "lblContact";
-            lblContact.Size = new Size(99, 15);
+            lblContact.Size = new Size(121, 20);
             lblContact.TabIndex = 3;
             lblContact.Text = "Contact Number:";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(88, 157);
+            lblEmail.Location = new Point(101, 209);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(39, 15);
+            lblEmail.Size = new Size(49, 20);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "Email:";
             // 
             // lblBalance
             // 
             lblBalance.AutoSize = true;
-            lblBalance.Location = new Point(88, 186);
+            lblBalance.Location = new Point(101, 248);
             lblBalance.Name = "lblBalance";
             lblBalance.RightToLeft = RightToLeft.No;
-            lblBalance.Size = new Size(83, 15);
+            lblBalance.Size = new Size(105, 20);
             lblBalance.TabIndex = 5;
             lblBalance.Text = "Initial Balance:";
             // 
             // txtBalance
             // 
-            txtBalance.Location = new Point(206, 178);
+            txtBalance.Location = new Point(235, 237);
+            txtBalance.Margin = new Padding(3, 4, 3, 4);
             txtBalance.Name = "txtBalance";
-            txtBalance.Size = new Size(141, 23);
+            txtBalance.Size = new Size(161, 27);
             txtBalance.TabIndex = 6;
             txtBalance.Text = "0.00";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(206, 149);
+            txtEmail.Location = new Point(235, 199);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(141, 23);
+            txtEmail.Size = new Size(161, 27);
             txtEmail.TabIndex = 7;
             // 
             // txtContact
             // 
-            txtContact.Location = new Point(206, 120);
+            txtContact.Location = new Point(235, 160);
+            txtContact.Margin = new Padding(3, 4, 3, 4);
             txtContact.Name = "txtContact";
-            txtContact.Size = new Size(141, 23);
+            txtContact.Size = new Size(161, 27);
             txtContact.TabIndex = 8;
             // 
             // txtFullName
             // 
-            txtFullName.Location = new Point(206, 62);
+            txtFullName.Location = new Point(235, 83);
+            txtFullName.Margin = new Padding(3, 4, 3, 4);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(141, 23);
+            txtFullName.Size = new Size(161, 27);
             txtFullName.TabIndex = 9;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(206, 91);
+            txtAddress.Location = new Point(235, 121);
+            txtAddress.Margin = new Padding(3, 4, 3, 4);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(141, 23);
+            txtAddress.Size = new Size(161, 27);
             txtAddress.TabIndex = 10;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(261, 232);
+            btnBack.Location = new Point(298, 309);
+            btnBack.Margin = new Padding(3, 4, 3, 4);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(75, 23);
+            btnBack.Size = new Size(86, 31);
             btnBack.TabIndex = 11;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(180, 232);
+            btnClear.Location = new Point(206, 309);
+            btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(75, 23);
+            btnClear.Size = new Size(86, 31);
             btnClear.TabIndex = 12;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(99, 232);
+            btnSave.Location = new Point(113, 309);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
+            btnSave.Size = new Size(86, 31);
             btnSave.TabIndex = 13;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // AddCustomerForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(434, 381);
+            ClientSize = new Size(496, 508);
             Controls.Add(btnSave);
             Controls.Add(btnClear);
             Controls.Add(btnBack);
@@ -184,10 +193,12 @@
             Controls.Add(lblFullName);
             Controls.Add(lblTitle);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "AddCustomerForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System v1.0 - Add Customer (V.I.)";
+            Load += AddCustomerForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -48,9 +48,9 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(36, 82);
+            lblTitle.Location = new Point(41, 109);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(133, 25);
+            lblTitle.Size = new Size(170, 32);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Customer List";
             // 
@@ -59,97 +59,116 @@
             dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCustomers.Columns.AddRange(new DataGridViewColumn[] { CustomerID, FullName, Address, ContactNumber, Email, Balance });
-            dgvCustomers.Location = new Point(36, 110);
+            dgvCustomers.Location = new Point(41, 147);
+            dgvCustomers.Margin = new Padding(3, 4, 3, 4);
             dgvCustomers.Name = "dgvCustomers";
             dgvCustomers.ReadOnly = true;
+            dgvCustomers.RowHeadersWidth = 51;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomers.Size = new Size(715, 247);
+            dgvCustomers.Size = new Size(817, 329);
             dgvCustomers.TabIndex = 1;
+            dgvCustomers.CellDoubleClick += dgvCustomers_CellContentClick;
+            dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
             // 
             // CustomerID
             // 
             CustomerID.HeaderText = "ID";
+            CustomerID.MinimumWidth = 6;
             CustomerID.Name = "CustomerID";
             CustomerID.ReadOnly = true;
             // 
             // FullName
             // 
             FullName.HeaderText = "FullName";
+            FullName.MinimumWidth = 6;
             FullName.Name = "FullName";
             FullName.ReadOnly = true;
             // 
             // Address
             // 
             Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
             Address.Name = "Address";
             Address.ReadOnly = true;
             // 
             // ContactNumber
             // 
             ContactNumber.HeaderText = "Contact No.";
+            ContactNumber.MinimumWidth = 6;
             ContactNumber.Name = "ContactNumber";
             ContactNumber.ReadOnly = true;
             // 
             // Email
             // 
             Email.HeaderText = "Email";
+            Email.MinimumWidth = 6;
             Email.Name = "Email";
             Email.ReadOnly = true;
             // 
             // Balance
             // 
             Balance.HeaderText = "Balance";
+            Balance.MinimumWidth = 6;
             Balance.Name = "Balance";
             Balance.ReadOnly = true;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(232, 363);
+            btnAdd.Location = new Point(265, 484);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(125, 23);
+            btnAdd.Size = new Size(143, 31);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Add Customer";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(381, 363);
+            btnDelete.Location = new Point(435, 484);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
+            btnDelete.Size = new Size(86, 31);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(478, 363);
+            btnLogout.Location = new Point(546, 484);
+            btnLogout.Margin = new Padding(3, 4, 3, 4);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(75, 23);
+            btnLogout.Size = new Size(86, 31);
             btnLogout.TabIndex = 4;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(599, 82);
+            txtSearch.Location = new Point(685, 109);
+            txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(152, 23);
+            txtSearch.Size = new Size(173, 27);
             txtSearch.TabIndex = 5;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(518, 82);
+            btnSearch.Location = new Point(592, 109);
+            btnSearch.Margin = new Padding(3, 4, 3, 4);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(75, 23);
+            btnSearch.Size = new Size(86, 31);
             btnSearch.TabIndex = 6;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // CustomerListForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(896, 615);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(btnLogout);
@@ -157,9 +176,11 @@
             Controls.Add(btnAdd);
             Controls.Add(dgvCustomers);
             Controls.Add(lblTitle);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System v1.0 - Customer List (B.A.)";
+            Load += CustomerListForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
