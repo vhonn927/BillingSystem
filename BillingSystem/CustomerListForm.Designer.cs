@@ -36,11 +36,15 @@
             ContactNumber = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
             Balance = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             btnAdd = new Button();
             btnDelete = new Button();
             btnLogout = new Button();
             txtSearch = new TextBox();
             btnSearch = new Button();
+            btnAnalytics = new Button();
+            btnExportExcel = new Button();
+            btnExportPdf = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +62,7 @@
             // 
             dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomers.Columns.AddRange(new DataGridViewColumn[] { CustomerID, FullName, Address, ContactNumber, Email, Balance });
+            dgvCustomers.Columns.AddRange(new DataGridViewColumn[] { CustomerID, FullName, Address, ContactNumber, Email, Balance, Status });
             dgvCustomers.Location = new Point(36, 110);
             dgvCustomers.Name = "dgvCustomers";
             dgvCustomers.ReadOnly = true;
@@ -104,9 +108,15 @@
             Balance.Name = "Balance";
             Balance.ReadOnly = true;
             // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(232, 363);
+            btnAdd.Location = new Point(73, 363);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(125, 23);
             btnAdd.TabIndex = 2;
@@ -116,7 +126,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(381, 363);
+            btnDelete.Location = new Point(219, 363);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
             btnDelete.TabIndex = 3;
@@ -126,7 +136,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(478, 363);
+            btnLogout.Location = new Point(676, 363);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(75, 23);
             btnLogout.TabIndex = 4;
@@ -151,11 +161,44 @@
             btnSearch.Click += btnSearch_Click;
             btnSearch.KeyPress += txtSearch_KeyPress;
             // 
+            // btnAnalytics
+            // 
+            btnAnalytics.Location = new Point(320, 363);
+            btnAnalytics.Name = "btnAnalytics";
+            btnAnalytics.Size = new Size(75, 23);
+            btnAnalytics.TabIndex = 7;
+            btnAnalytics.Text = "Analytics";
+            btnAnalytics.UseVisualStyleBackColor = true;
+            btnAnalytics.Click += btnAnalytics_Click;
+            // 
+            // btnExportExcel
+            // 
+            btnExportExcel.Location = new Point(422, 363);
+            btnExportExcel.Name = "btnExportExcel";
+            btnExportExcel.Size = new Size(106, 23);
+            btnExportExcel.TabIndex = 8;
+            btnExportExcel.Text = "Export to Excel";
+            btnExportExcel.UseVisualStyleBackColor = true;
+            btnExportExcel.Click += btnExportExcel_Click;
+            // 
+            // btnExportPdf
+            // 
+            btnExportPdf.Location = new Point(557, 363);
+            btnExportPdf.Name = "btnExportPdf";
+            btnExportPdf.Size = new Size(94, 23);
+            btnExportPdf.TabIndex = 9;
+            btnExportPdf.Text = "Export to PDF";
+            btnExportPdf.UseVisualStyleBackColor = true;
+            btnExportPdf.Click += btnExportPdf_Click;
+            // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 461);
+            Controls.Add(btnExportPdf);
+            Controls.Add(btnExportExcel);
+            Controls.Add(btnAnalytics);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(btnLogout);
@@ -166,7 +209,6 @@
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System v1.0 - Customer List (B.A.)";
-            Load += CustomerListForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -176,16 +218,20 @@
 
         private Label lblTitle;
         private DataGridView dgvCustomers;
+        private Button btnAdd;
+        private Button btnDelete;
+        private Button btnLogout;
+        private TextBox txtSearch;
+        private Button btnSearch;
+        private Button btnAnalytics;
+        private Button btnExportExcel;
         private DataGridViewTextBoxColumn CustomerID;
         private DataGridViewTextBoxColumn FullName;
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn ContactNumber;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Balance;
-        private Button btnAdd;
-        private Button btnDelete;
-        private Button btnLogout;
-        private TextBox txtSearch;
-        private Button btnSearch;
+        private DataGridViewTextBoxColumn Status;
+        private Button btnExportPdf;
     }
 }
