@@ -126,7 +126,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(36, 363);
+            btnAdd.Location = new Point(44, 363);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(125, 23);
             btnAdd.TabIndex = 2;
@@ -136,7 +136,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(214, 363);
+            btnDelete.Location = new Point(190, 363);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
             btnDelete.TabIndex = 3;
@@ -146,7 +146,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(676, 421);
+            btnLogout.Location = new Point(666, 363);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(75, 23);
             btnLogout.TabIndex = 4;
@@ -174,7 +174,7 @@
             // 
             // btnAnalytics
             // 
-            btnAnalytics.Location = new Point(360, 363);
+            btnAnalytics.Location = new Point(309, 363);
             btnAnalytics.Name = "btnAnalytics";
             btnAnalytics.Size = new Size(75, 23);
             btnAnalytics.TabIndex = 7;
@@ -184,7 +184,7 @@
             // 
             // btnExportExcel
             // 
-            btnExportExcel.Location = new Point(201, 403);
+            btnExportExcel.Location = new Point(443, 403);
             btnExportExcel.Name = "btnExportExcel";
             btnExportExcel.Size = new Size(106, 23);
             btnExportExcel.TabIndex = 8;
@@ -194,7 +194,7 @@
             // 
             // btnExportPdf
             // 
-            btnExportPdf.Location = new Point(36, 403);
+            btnExportPdf.Location = new Point(290, 403);
             btnExportPdf.Name = "btnExportPdf";
             btnExportPdf.Size = new Size(94, 23);
             btnExportPdf.TabIndex = 9;
@@ -204,7 +204,7 @@
             // 
             // btnAuditLog
             // 
-            btnAuditLog.Location = new Point(498, 363);
+            btnAuditLog.Location = new Point(419, 363);
             btnAuditLog.Name = "btnAuditLog";
             btnAuditLog.Size = new Size(75, 23);
             btnAuditLog.TabIndex = 10;
@@ -214,7 +214,7 @@
             // 
             // btnManagePermissions
             // 
-            btnManagePermissions.Location = new Point(624, 363);
+            btnManagePermissions.Location = new Point(518, 363);
             btnManagePermissions.Name = "btnManagePermissions";
             btnManagePermissions.Size = new Size(127, 23);
             btnManagePermissions.TabIndex = 11;
@@ -240,8 +240,8 @@
             // lblStatusSep
             // 
             lblStatusSep.Name = "lblStatusSep";
-            lblStatusSep.Size = new Size(118, 17);
-            lblStatusSep.Text = "toolStripStatusLabel1";
+            lblStatusSep.Size = new Size(533, 17);
+            lblStatusSep.Spring = true;
             // 
             // lblStatusTime
             // 
