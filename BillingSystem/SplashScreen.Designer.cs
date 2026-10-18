@@ -50,7 +50,7 @@
             // 
             lblTagline.Font = new Font("Segoe UI", 11F);
             lblTagline.ForeColor = Color.LightBlue;
-            lblTagline.Location = new Point(112, 151);
+            lblTagline.Location = new Point(113, 137);
             lblTagline.Name = "lblTagline";
             lblTagline.Size = new Size(273, 23);
             lblTagline.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             lblLoading.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblLoading.ForeColor = Color.LightBlue;
-            lblLoading.Location = new Point(178, 210);
+            lblLoading.Location = new Point(190, 204);
             lblLoading.Name = "lblLoading";
             lblLoading.Size = new Size(100, 23);
             lblLoading.TabIndex = 2;

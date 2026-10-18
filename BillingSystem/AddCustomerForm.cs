@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BillingSystem.Utils;
 
 namespace BillingSystem
 {
@@ -61,6 +62,7 @@ namespace BillingSystem
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Customer saved successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AuditLogger.Log("ADD_CUSTOMER", $"New customer '{txtFullName.Text.Trim()}' added by { AppSession.CurrentUsername}.");
 
                             ClearFields();
                         }
@@ -120,7 +122,8 @@ namespace BillingSystem
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Customer updated successfully.",
-                                "Updated", MessageBoxButtons.OK,  MessageBoxIcon.Information);
+                                "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AuditLogger.Log("EDIT_CUSTOMER", $"Customer ID {_editCustomerId} updated by {AppSession.CurrentUsername}.");
 
                             // Close the form — CustomerListForm will refresh on close
                             this.Close();

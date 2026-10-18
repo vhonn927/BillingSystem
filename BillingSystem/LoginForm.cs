@@ -1,10 +1,10 @@
 using MySql.Data.MySqlClient;
 using BillingSystem.Database;
-namespace BillingSystem;
+using BillingSystem.Utils;
+using System.Windows.Forms;
+using System;
 
-using BillingSystem.Utils; 
-
-
+namespace BillingSystem
 {
     public partial class LoginForm : Form
     {
@@ -53,23 +53,23 @@ using BillingSystem.Utils;
 
                         using (var reader = cmd.ExecuteReader())
                         {
-                        if (reader.Read())
-                        {
-                            // Populate AppSession with the logged-in user's details 
-                            AppSession.CurrentUserID = reader.GetInt32("UserID");
-                            AppSession.CurrentUsername = txtUsername.Text.Trim();
-                            AppSession.CurrentFullName = reader.GetString("FullName");
-                            AppSession.CurrentRole = reader.GetString("Role");
+                            if (reader.Read())
+                            {
+                                // Populate AppSession with the logged-in user's details 
+                                AppSession.CurrentUserID = reader.GetInt32("UserID");
+                                AppSession.CurrentUsername = txtUsername.Text.Trim();
+                                AppSession.CurrentFullName = reader.GetString("FullName");
+                                AppSession.CurrentRole = reader.GetString("Role");
 
-                            // Write a LOGIN audit log entry 
-                            AuditLogger.Log("LOGIN",
-                                $"{AppSession.CurrentFullName} ({AppSession.CurrentRole}) logged in."); 
-                            // Open the Customer List Form 
-                            CustomerListForm listForm = new CustomerListForm();
-                            listForm.Show();
-                            this.Hide();
-                        }
-                        else
+                                // Write a LOGIN audit log entry 
+                                AuditLogger.Log("LOGIN",
+                                    $"{AppSession.CurrentFullName} ({AppSession.CurrentRole}) logged in.");
+                                // Open the Customer List Form 
+                                CustomerListForm listForm = new CustomerListForm();
+                                listForm.Show();
+                                this.Hide();
+                            }
+                            else
                             {
                                 // No match found — wrong credentials 
                                 MessageBox.Show(
