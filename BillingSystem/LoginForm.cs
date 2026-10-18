@@ -1,4 +1,5 @@
 using BillingSystem.Database;
+using BillingSystem.Utils;
 using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
@@ -45,6 +46,13 @@ namespace BillingSystem
                         {
                             if (reader.Read())
                             {
+                                AppSession.CurrentUserID = reader.GetInt32("UserID");
+                                AppSession.CurrentUsername = txtUsername.Text.Trim();
+                                AppSession.CurrentFullName = reader.GetString("FullName");
+                                AppSession.CurrentRole = reader.GetString("Role");
+
+                                AuditLogger.Log("LOGIN", $"{AppSession.CurrentFullName} ({AppSession.CurrentRole}) logged in.");
+
                                 CustomerListForm listForm = new CustomerListForm();
                                 listForm.Show();
                                 this.Hide();
@@ -68,8 +76,6 @@ namespace BillingSystem
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // Test the database connection when the form opens.
-            // This gives a clear warning if MySQL is not running.
             if (!DatabaseConnection.TestConnection())
             {
                 MessageBox.Show(
