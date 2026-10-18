@@ -1,17 +1,18 @@
 ﻿using BillingSystem.Database;
+using BillingSystem.Utils;
+using ClosedXML.Excel;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Utilities;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using ClosedXML.Excel;
-using System.IO;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
 
 
 
@@ -413,7 +414,7 @@ namespace BillingSystem
 
                                 for (int col = 0; col < columnCount; col++)
                                 {
-                                    string text = row.Cells[col].Value?.ToString()?? "";
+                                    string text = row.Cells[col].Value?.ToString() ?? "";
                                     gfx.DrawString(text, cellFont, XBrushes.Black,
                                         new XRect(x, y, colWidth, rowHeight),
                                         XStringFormats.CenterLeft);
@@ -435,6 +436,13 @@ namespace BillingSystem
                         "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            AuditLogger.Log("LOGOUT", $"{AppSession.CurrentFullName} ({AppSession.CurrentRole}) logged out.");
+            AppSession.Clear();
+            this.Close();
         }
     }
 }
