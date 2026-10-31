@@ -31,6 +31,13 @@
             components = new System.ComponentModel.Container();
             lblTitle = new Label();
             dgvCustomers = new DataGridView();
+            CustomerID = new DataGridViewTextBoxColumn();
+            FullName = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            ContactNumber = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            Balance = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             btnAdd = new Button();
             btnDelete = new Button();
             btnLogout = new Button();
@@ -43,16 +50,10 @@
             btnManagePermissions = new Button();
             statusStrip1 = new StatusStrip();
             lblStatusUser = new ToolStripStatusLabel();
-            lblStatusSpring = new ToolStripStatusLabel();
+            lblStatusSep = new ToolStripStatusLabel();
             lblStatusTime = new ToolStripStatusLabel();
             statusTimer = new System.Windows.Forms.Timer(components);
-            CustomerID = new DataGridViewTextBoxColumn();
-            FullName = new DataGridViewTextBoxColumn();
-            Address = new DataGridViewTextBoxColumn();
-            ContactNumber = new DataGridViewTextBoxColumn();
-            Email = new DataGridViewTextBoxColumn();
-            Balance = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
+            btnChangePassword = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -83,6 +84,55 @@
             dgvCustomers.CellDoubleClick += dgvCustomers_CellContentClick;
             dgvCustomers.CellFormatting += dgvCustomers_CellFormatting;
             dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
+            // 
+            // CustomerID
+            // 
+            CustomerID.HeaderText = "ID";
+            CustomerID.MinimumWidth = 6;
+            CustomerID.Name = "CustomerID";
+            CustomerID.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            FullName.HeaderText = "FullName";
+            FullName.MinimumWidth = 6;
+            FullName.Name = "FullName";
+            FullName.ReadOnly = true;
+            // 
+            // Address
+            // 
+            Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            // 
+            // ContactNumber
+            // 
+            ContactNumber.HeaderText = "Contact No.";
+            ContactNumber.MinimumWidth = 6;
+            ContactNumber.Name = "ContactNumber";
+            ContactNumber.ReadOnly = true;
+            // 
+            // Email
+            // 
+            Email.HeaderText = "Email";
+            Email.MinimumWidth = 6;
+            Email.Name = "Email";
+            Email.ReadOnly = true;
+            // 
+            // Balance
+            // 
+            Balance.HeaderText = "Balance";
+            Balance.MinimumWidth = 6;
+            Balance.Name = "Balance";
+            Balance.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
             // btnAdd
             // 
@@ -190,10 +240,10 @@
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatusUser, lblStatusSpring, lblStatusTime });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatusUser, lblStatusSep, lblStatusTime });
             statusStrip1.Location = new Point(0, 589);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(896, 26);
+            statusStrip1.Size = new Size(980, 26);
             statusStrip1.TabIndex = 12;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -203,17 +253,17 @@
             lblStatusUser.Size = new Size(130, 20);
             lblStatusUser.Text = "Logged in as: User";
             // 
-            // lblStatusSpring
+            // lblStatusSep
             // 
-            lblStatusSpring.Name = "lblStatusSpring";
-            lblStatusSpring.Size = new Size(709, 20);
-            lblStatusSpring.Spring = true;
+            lblStatusSep.Name = "lblStatusSep";
+            lblStatusSep.Size = new Size(37, 20);
+            lblStatusSep.Text = "   |   ";
             // 
             // lblStatusTime
             // 
             lblStatusTime.Name = "lblStatusTime";
-            lblStatusTime.Size = new Size(42, 20);
-            lblStatusTime.Text = "Time";
+            lblStatusTime.Size = new Size(105, 20);
+            lblStatusTime.Text = "Time and date";
             // 
             // statusTimer
             // 
@@ -221,60 +271,22 @@
             statusTimer.Interval = 1000;
             statusTimer.Tick += statusTimer_Tick;
             // 
-            // CustomerID
+            // btnChangePassword
             // 
-            CustomerID.HeaderText = "ID";
-            CustomerID.MinimumWidth = 6;
-            CustomerID.Name = "CustomerID";
-            CustomerID.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            FullName.HeaderText = "FullName";
-            FullName.MinimumWidth = 6;
-            FullName.Name = "FullName";
-            FullName.ReadOnly = true;
-            // 
-            // Address
-            // 
-            Address.HeaderText = "Address";
-            Address.MinimumWidth = 6;
-            Address.Name = "Address";
-            Address.ReadOnly = true;
-            // 
-            // ContactNumber
-            // 
-            ContactNumber.HeaderText = "Contact No.";
-            ContactNumber.MinimumWidth = 6;
-            ContactNumber.Name = "ContactNumber";
-            ContactNumber.ReadOnly = true;
-            // 
-            // Email
-            // 
-            Email.HeaderText = "Email";
-            Email.MinimumWidth = 6;
-            Email.Name = "Email";
-            Email.ReadOnly = true;
-            // 
-            // Balance
-            // 
-            Balance.HeaderText = "Balance";
-            Balance.MinimumWidth = 6;
-            Balance.Name = "Balance";
-            Balance.ReadOnly = true;
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.ReadOnly = true;
+            btnChangePassword.Location = new Point(390, 530);
+            btnChangePassword.Name = "btnChangePassword";
+            btnChangePassword.Size = new Size(132, 29);
+            btnChangePassword.TabIndex = 13;
+            btnChangePassword.Text = "Change Password";
+            btnChangePassword.UseVisualStyleBackColor = true;
+            btnChangePassword.Click += btnChangePassword_Click;
             // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(896, 615);
+            ClientSize = new Size(980, 615);
+            Controls.Add(btnChangePassword);
             Controls.Add(statusStrip1);
             Controls.Add(btnManagePermissions);
             Controls.Add(btnAuditLog);
@@ -316,7 +328,7 @@
         private Button btnManagePermissions;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblStatusUser;
-        private ToolStripStatusLabel lblStatusSpring;
+        private ToolStripStatusLabel lblStatusSep;
         private ToolStripStatusLabel lblStatusTime;
         private System.Windows.Forms.Timer statusTimer;
         private DataGridViewTextBoxColumn CustomerID;
@@ -326,5 +338,6 @@
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Balance;
         private DataGridViewTextBoxColumn Status;
+        private Button btnChangePassword;
     }
 }

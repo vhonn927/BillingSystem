@@ -21,6 +21,7 @@ namespace BillingSystem
         {
             InitializeComponent();
             ConfigureDataGridView();
+            LoadCustomers();
         }
 
         private void dgvCustomers_SelectionChanged(object sender, EventArgs e)
@@ -89,22 +90,37 @@ namespace BillingSystem
             LoadCustomers();
             ApplyPermissions();
             InitStatusStrip();
+            statusTimer.Enabled = true; // Use Enabled = true instead of .Start()
         }
 
+        // Call this inside CustomerListForm_Load after ApplyPermissions() 
         private void InitStatusStrip()
         {
-            lblStatusUser.Text = $"Logged in as: {AppSession.CurrentFullName} ({AppSession.CurrentRole})";
-            lblStatusTime.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
-        }
+            lblStatusUser.Text = $"User: {AppSession.CurrentFullName} | Role: {AppSession.CurrentRole}";
 
-        private void timerClock_Tick(object sender, EventArgs e)
-        {
-            lblStatusTime.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+            // Disable Spring so it doesn't force the time label off-screen
+            lblStatusSep.Spring = false;
+            lblStatusSep.Text = "   |   ";
+
+            // Ensure the time label is visible and autosized
+            lblStatusTime.Visible = true;
+            lblStatusTime.AutoSize = true;
+
+            UpdateStatusTime();
         }
 
         private void statusTimer_Tick(object sender, EventArgs e)
         {
-            timerClock_Tick(sender, e);
+            UpdateStatusTime();
+        }
+
+        private void UpdateStatusTime()
+        {
+            DateTime now = DateTime.Now;
+            string formattedDate = now.ToString("dddd, MMMM dd yyyy hh:mm:ss");
+            string tt = now.ToString("tt").ToLower();
+
+            lblStatusTime.Text = $"{formattedDate} {tt}";
         }
 
         private void ApplyPermissions()
@@ -600,6 +616,14 @@ namespace BillingSystem
                     e.Value = $"₱{balance:N2}";
                     e.FormattingApplied = true;
                 }
+            }
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            using (frmChangePassword frm = new frmChangePassword())
+            {
+                frm.ShowDialog(this);
             }
         }
     }
