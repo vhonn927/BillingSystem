@@ -626,5 +626,34 @@ namespace BillingSystem
                 frm.ShowDialog(this);
             }
         }
+
+        private void btnViewBilling_Click(object sender, EventArgs e)
+        {
+            // POPUP 1: no customer selected, so the form must NOT open
+            if (dgvCustomers.CurrentRow == null ||
+                dgvCustomers.CurrentRow.IsNewRow ||
+                dgvCustomers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer from the list first.",
+                    "No Customer Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Read the selected row's CustomerID (never hard-coded)
+            var idValue = dgvCustomers.CurrentRow.Cells["CustomerID"].Value;
+
+            if (idValue == null || !int.TryParse(idValue.ToString(), out int customerId))
+            {
+                MessageBox.Show("Please select a customer from the list first.",
+                    "No Customer Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Pass only the ID; the new form looks up the name itself
+            using (frmBillingHistory frm = new frmBillingHistory(customerId))
+            {
+                frm.ShowDialog(this);
+            }
+        }
     }
 }
