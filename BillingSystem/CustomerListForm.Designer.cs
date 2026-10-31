@@ -54,6 +54,7 @@
             lblStatusTime = new ToolStripStatusLabel();
             statusTimer = new System.Windows.Forms.Timer(components);
             btnChangePassword = new Button();
+            btnViewBilling = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -185,7 +186,7 @@
             // 
             // btnExportExcel
             // 
-            btnExportExcel.Location = new Point(499, 402);
+            btnExportExcel.Location = new Point(563, 401);
             btnExportExcel.Name = "btnExportExcel";
             btnExportExcel.Size = new Size(106, 23);
             btnExportExcel.TabIndex = 8;
@@ -195,7 +196,7 @@
             // 
             // btnExportPdf
             // 
-            btnExportPdf.Location = new Point(346, 402);
+            btnExportPdf.Location = new Point(410, 401);
             btnExportPdf.Name = "btnExportPdf";
             btnExportPdf.Size = new Size(94, 23);
             btnExportPdf.TabIndex = 9;
@@ -258,7 +259,7 @@
             // 
             // btnChangePassword
             // 
-            btnChangePassword.Location = new Point(166, 402);
+            btnChangePassword.Location = new Point(254, 401);
             btnChangePassword.Name = "btnChangePassword";
             btnChangePassword.Size = new Size(119, 23);
             btnChangePassword.TabIndex = 13;
@@ -266,11 +267,22 @@
             btnChangePassword.UseVisualStyleBackColor = true;
             btnChangePassword.Click += btnChangePassword_Click;
             // 
+            // btnViewBilling
+            // 
+            btnViewBilling.Location = new Point(108, 401);
+            btnViewBilling.Name = "btnViewBilling";
+            btnViewBilling.Size = new Size(108, 23);
+            btnViewBilling.TabIndex = 14;
+            btnViewBilling.Text = "View Billing";
+            btnViewBilling.UseVisualStyleBackColor = true;
+            btnViewBilling.Click += button1_Click;
+            // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 461);
+            Controls.Add(btnViewBilling);
             Controls.Add(btnChangePassword);
             Controls.Add(statusStrip1);
             Controls.Add(btnManagePermissions);
@@ -323,5 +335,6 @@
         private ToolStripStatusLabel lblStatusTime;
         private System.Windows.Forms.Timer statusTimer;
         private Button btnChangePassword;
+        private Button btnViewBilling;
     }
 }
