@@ -53,6 +53,7 @@
             lblStatusSep = new ToolStripStatusLabel();
             lblStatusTime = new ToolStripStatusLabel();
             statusTimer = new System.Windows.Forms.Timer(components);
+            btnChangePassword = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -184,7 +185,7 @@
             // 
             // btnExportExcel
             // 
-            btnExportExcel.Location = new Point(443, 403);
+            btnExportExcel.Location = new Point(499, 402);
             btnExportExcel.Name = "btnExportExcel";
             btnExportExcel.Size = new Size(106, 23);
             btnExportExcel.TabIndex = 8;
@@ -194,7 +195,7 @@
             // 
             // btnExportPdf
             // 
-            btnExportPdf.Location = new Point(290, 403);
+            btnExportPdf.Location = new Point(346, 402);
             btnExportPdf.Name = "btnExportPdf";
             btnExportPdf.Size = new Size(94, 23);
             btnExportPdf.TabIndex = 9;
@@ -255,11 +256,22 @@
             statusTimer.Interval = 1000;
             statusTimer.Tick += statusTimer_Tick;
             // 
+            // btnChangePassword
+            // 
+            btnChangePassword.Location = new Point(166, 402);
+            btnChangePassword.Name = "btnChangePassword";
+            btnChangePassword.Size = new Size(119, 23);
+            btnChangePassword.TabIndex = 13;
+            btnChangePassword.Text = "Change Password";
+            btnChangePassword.UseVisualStyleBackColor = true;
+            btnChangePassword.Click += btnChangePassword_Click;
+            // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 461);
+            Controls.Add(btnChangePassword);
             Controls.Add(statusStrip1);
             Controls.Add(btnManagePermissions);
             Controls.Add(btnAuditLog);
@@ -310,5 +322,6 @@
         private ToolStripStatusLabel lblStatusSep;
         private ToolStripStatusLabel lblStatusTime;
         private System.Windows.Forms.Timer statusTimer;
+        private Button btnChangePassword;
     }
 }

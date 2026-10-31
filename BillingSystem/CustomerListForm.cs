@@ -583,6 +583,8 @@ namespace BillingSystem
             btnAuditLog.ForeColor = Color.White;
             btnManagePermissions.BackColor = AppTheme.DangerColor;
             btnManagePermissions.ForeColor = Color.White;
+            btnChangePassword.BackColor = AppTheme.SecondaryColor;
+            btnChangePassword.ForeColor = Color.White;
 
             // DataGridView header colors
             dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor = AppTheme.PrimaryColor;
@@ -620,6 +622,14 @@ namespace BillingSystem
             }
 
 
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            using (frmChangePassword frm = new frmChangePassword())
+            {
+                frm.ShowDialog(this);
+            }
         }
     }
 }
