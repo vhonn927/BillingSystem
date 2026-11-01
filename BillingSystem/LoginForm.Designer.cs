@@ -83,7 +83,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(101, 168);
+            btnLogin.Location = new Point(89, 180);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(75, 23);
             btnLogin.TabIndex = 6;
@@ -102,7 +102,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(182, 168);
+            btnCancel.Location = new Point(191, 180);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 8;

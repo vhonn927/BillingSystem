@@ -548,27 +548,22 @@ namespace BillingSystem
             // Form background
             this.BackColor = AppTheme.BackgroundColor;
 
-            // Action buttons
-            btnAdd.BackColor = AppTheme.SuccessColor;
-            btnAdd.ForeColor = System.Drawing.Color.White;
+            // Form background
+            this.BackColor = AppTheme.BackgroundColor;
 
-            btnDelete.BackColor = AppTheme.DangerColor;
-            btnDelete.ForeColor = System.Drawing.Color.White;
+            // Reset all action buttons to neutral Windows standard
+            Button[] buttons = new Button[]
+            {
+                btnAdd, btnDelete, btnAnalytics, btnAuditLog,
+                btnManagePermissions, btnChangePassword,
+                btnExportExcel, btnExportPdf
+            };
 
-            btnAnalytics.BackColor = AppTheme.PrimaryColor;
-            btnAnalytics.ForeColor = System.Drawing.Color.White;
-
-            btnExportExcel.BackColor = AppTheme.SecondaryColor;
-            btnExportExcel.ForeColor = System.Drawing.Color.White;
-
-            btnExportPdf.BackColor = AppTheme.SecondaryColor;
-            btnExportPdf.ForeColor = System.Drawing.Color.White;
-
-            btnAuditLog.BackColor = AppTheme.SecondaryColor;
-            btnAuditLog.ForeColor = System.Drawing.Color.White;
-
-            btnManagePermissions.BackColor = AppTheme.DangerColor;
-            btnManagePermissions.ForeColor = System.Drawing.Color.White;
+            foreach (Button btn in buttons)
+            {
+                btn.UseVisualStyleBackColor = true;
+                btn.ForeColor = System.Drawing.Color.Black;
+            }
 
             // DataGridView header colors
             dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor = AppTheme.PrimaryColor;
@@ -599,6 +594,12 @@ namespace BillingSystem
                 // alternating row colors stay visible 
                 e.CellStyle.BackColor = AppTheme.ActiveRowColor;
             }
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword changePasswordForm = new frmChangePassword();
+            changePasswordForm.ShowDialog(this);
         }
     }
 }
