@@ -28,15 +28,23 @@ namespace BillingSystem
 
         private void dgvCustomers_SelectionChanged(object sender, EventArgs e)
         {
-            // If no row is selected (e.g., grid is empty), do nothing 
-            if (dgvCustomers.CurrentRow == null) return;
+            // If no row is selected, or if the grid is empty, reset selection tracker to 0
+            if (dgvCustomers.CurrentRow == null || dgvCustomers.CurrentRow.Index < 0 || dgvCustomers.Rows.Count == 0)
+            {
+                _selectedCustomerId = 0;
+                return;
+            }
 
-            // Read the CustomerID value from the selected row 
+            // Read CustomerID from the selected row
             var idCell = dgvCustomers.CurrentRow.Cells["CustomerID"].Value;
 
             if (idCell != null && int.TryParse(idCell.ToString(), out int id))
             {
                 _selectedCustomerId = id;
+            }
+            else
+            {
+                _selectedCustomerId = 0;
             }
         }
 
@@ -141,6 +149,10 @@ namespace BillingSystem
                             adapter.Fill(dt);
 
                             dgvCustomers.DataSource = dt;
+                            if (dt.Rows.Count == 0)
+                            {
+                                _selectedCustomerId = 0;
+                            }
                             lblTitle.Text = $"Customer List  ({dt.Rows.Count} result(s))";
                         }
                     }
@@ -555,7 +567,7 @@ namespace BillingSystem
             Button[] buttons = new Button[]
             {
                 btnAdd, btnDelete, btnAnalytics, btnAuditLog,
-                btnManagePermissions, btnChangePassword,
+                btnManagePermissions, btnChangePassword, btnViewBilling,
                 btnExportExcel, btnExportPdf
             };
 
@@ -600,6 +612,19 @@ namespace BillingSystem
         {
             frmChangePassword changePasswordForm = new frmChangePassword();
             changePasswordForm.ShowDialog(this);
+        }
+
+        private void btnViewBilling_Click(object sender, EventArgs e)
+        {
+            // Popup 1 Requirement: Ensure a valid customer row is actually selected
+            if (_selectedCustomerId == 0 || dgvCustomers.CurrentRow == null || dgvCustomers.Rows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer first to view their billing history.", "No Customer Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            frmBillingHistory billingHistoryForm = new frmBillingHistory(_selectedCustomerId);
+            billingHistoryForm.ShowDialog(this);
         }
     }
 }
