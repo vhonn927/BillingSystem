@@ -41,5 +41,12 @@ namespace BillingSystem.Utils
 
         // Light red — inactive customer rows 
         public static Color InactiveRowColor = Color.FromArgb(255, 199, 206);
+
+        // --- Custom Action Button Palette ---
+        public static Color AuditButtonColor = Color.FromArgb(0, 168, 150);  // Teal / Cyan
+        public static Color ExcelExportColor = Color.FromArgb(16, 124, 65);   // Excel Brand Green (#107C41)
+        public static Color PdfExportColor = Color.FromArgb(226, 53, 40);   // PDF Brand Red/Orange (#E23528)
+        public static Color PermissionsButtonColor = Color.FromArgb(255, 193, 7);   // Warning Yellow (#FFC107)
+        public static Color AnalyticsButtonColor = Color.FromArgb(155, 89, 182);  // Light Purple (#9B59B6)
     }
 }

@@ -52,12 +52,12 @@
             dgvBilling.Name = "dgvBilling";
             dgvBilling.ReadOnly = true;
             dgvBilling.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBilling.Size = new Size(697, 265);
+            dgvBilling.Size = new Size(772, 265);
             dgvBilling.TabIndex = 1;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(688, 368);
+            btnClose.Location = new Point(763, 369);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(75, 23);
             btnClose.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 441);
+            ClientSize = new Size(918, 441);
             Controls.Add(btnClose);
             Controls.Add(dgvBilling);
             Controls.Add(lblTitle);

@@ -467,8 +467,22 @@ namespace BillingSystem
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            // 1. Log the audit event
             AuditLogger.Log("LOGOUT", $"{AppSession.CurrentFullName} ({AppSession.CurrentRole}) logged out.");
+
+            // 2. Clear current session state
             AppSession.Clear();
+
+            // 3. Instantiate and display LoginForm
+            LoginForm loginForm = new LoginForm();
+
+            // Hide CustomerListForm while LoginForm is active
+            this.Hide();
+
+            // Show LoginForm as a dialog
+            DialogResult result = loginForm.ShowDialog();
+
+            // 4. After LoginForm closes, dispose this form instance
             this.Close();
         }
 
@@ -560,22 +574,27 @@ namespace BillingSystem
             // Form background
             this.BackColor = AppTheme.BackgroundColor;
 
-            // Form background
-            this.BackColor = AppTheme.BackgroundColor;
+            // Action buttons (restored color-coded theme)
+            btnAdd.BackColor = AppTheme.SuccessColor;
+            btnAdd.ForeColor = System.Drawing.Color.White;
 
-            // Reset all action buttons to neutral Windows standard
-            Button[] buttons = new Button[]
-            {
-                btnAdd, btnDelete, btnAnalytics, btnAuditLog,
-                btnManagePermissions, btnChangePassword, btnViewBilling,
-                btnExportExcel, btnExportPdf
-            };
+            btnDelete.BackColor = AppTheme.DangerColor;
+            btnDelete.ForeColor = System.Drawing.Color.White;
 
-            foreach (Button btn in buttons)
-            {
-                btn.UseVisualStyleBackColor = true;
-                btn.ForeColor = System.Drawing.Color.Black;
-            }
+            btnAnalytics.BackColor = AppTheme.AnalyticsButtonColor;
+            btnAnalytics.ForeColor = System.Drawing.Color.White;
+
+            btnExportExcel.BackColor = AppTheme.ExcelExportColor;
+            btnExportExcel.ForeColor = System.Drawing.Color.White;
+
+            btnExportPdf.BackColor = AppTheme.PdfExportColor;
+            btnExportPdf.ForeColor = System.Drawing.Color.White;
+
+            btnAuditLog.BackColor = AppTheme.AuditButtonColor;
+            btnAuditLog.ForeColor = System.Drawing.Color.White;
+
+            btnManagePermissions.BackColor = AppTheme.PermissionsButtonColor;
+            btnManagePermissions.ForeColor = System.Drawing.Color.White;
 
             // DataGridView header colors
             dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor = AppTheme.PrimaryColor;

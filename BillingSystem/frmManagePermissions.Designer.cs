@@ -46,7 +46,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(135, 27);
+            lblTitle.Location = new Point(105, 26);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(167, 21);
             lblTitle.TabIndex = 0;
@@ -143,7 +143,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(85, 344);
+            btnSave.Location = new Point(85, 325);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
             btnSave.TabIndex = 10;
@@ -153,7 +153,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(227, 344);
+            btnClose.Location = new Point(197, 325);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(75, 23);
             btnClose.TabIndex = 11;
@@ -165,7 +165,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(434, 421);
+            ClientSize = new Size(383, 419);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(chkAuditLogs);
